@@ -4,7 +4,7 @@ import java.util.HashSet;
 import java.util.TreeSet;
 
 
-public class MaSET {
+public class MASet {
 	TreeSet<MaschineS>tmenge;
 	HashSet<MaschineS>hmenge;
 	
