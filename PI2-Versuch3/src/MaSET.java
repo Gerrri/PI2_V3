@@ -22,7 +22,7 @@ public class MaSET {
 	
 	
 	String[] set2String(int a){
-		String[] Str_Ar;
+		String[] Str_Ar={"0","a"};
 		
 		
 		
