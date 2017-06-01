@@ -1,4 +1,4 @@
-public class MaschineS {
+public class MaschineS implements Comparable {
 		private int manr; // Maschinennummer
 		private double preis; // Maschinen anschaffungspreis
 		private String mabez; // Bezeichnung
@@ -96,6 +96,11 @@ public class MaschineS {
 		
 		double abschreibung(int laufz){
 			return (preis/laufz);
+		}
+
+		public int compareTo(MaschineS b) {
+			
+			return 0;
 		}
 }
 
