@@ -1,4 +1,4 @@
-public class MaschineS implements Comparable {
+public class MaschineS implements Comparable<MaschineS> {
 		private int manr; // Maschinennummer
 		private double preis; // Maschinen anschaffungspreis
 		private String mabez; // Bezeichnung
