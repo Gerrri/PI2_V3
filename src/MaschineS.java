@@ -99,8 +99,24 @@ public class MaschineS implements Comparable {
 		}
 
 		public int compareTo(MaschineS b) {
+			int m,p,mb,s;
+						
+			mb = mabez.compareTo(b.mabez);
+			s = stao.compareTo(b.stao);
+			m = manr - b.manr;
+			p = (int) (preis - b.preis);
 			
-			return 0;
+			if(mb==0 && s==0 && m==0 && p==0){
+				return 1;
+			}
+			
+			else{
+				return 0;
+			}
+			// 0 -> Ungleicher Datensatz
+			// 1 -> Gleicher Datensatz
+
+			
 		}
 }
 
