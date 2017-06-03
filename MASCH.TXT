@@ -1,0 +1,16 @@
+123;456.34;Machiene0;Ort0
+564;23.0;Machiene6;Ort
+546;943.0;Machiene25;Ort7
+789;33.98;Machiene2;Ort4
+789;33.98;Machiene233;Ort8
+546;943.0;Machiene25;Ort7
+564;23.0;Machiene64;Ort6
+546;943.0;Machiene22;Ort2
+564;23.0;Machiene6;Ort
+564;23.0;Machiene61;Ort6
+789;33.98;Machiene233;Ort8
+789;33.98;Machiene2;Ort4
+-789;33.98;Machiene25;Ort23
+789;33.98;machiene53;Ort89
+546;943.0;Machiene85;ort23
+564;23.0;machiene69;ort45
