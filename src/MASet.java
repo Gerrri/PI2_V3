@@ -14,12 +14,28 @@ public class MASet {
 	
 
 	int dat2tset(BufferedReader br1) throws IOException {
+		Iterator<MaschineS> it = tmenge.iterator();
 		String pz = br1.readLine();
 		MaschineS s;
-		int rtn = 0;
-		while (pz != null) {
+		int rtn = 0,check;
+		
+		while (pz != null){
+			check = 0;
 			s = new MaschineS(pz);
-			if (s.getCrt() == 1) {
+			
+			
+			//Für Spätere Aufgabe?
+			/*
+			for(int i=0;i<tmenge.size();i++){
+				if(s.compareTo(it.next())!=0){
+					check = -1;
+					break; 
+				}
+			}
+			*/
+			
+			
+			if (s.getCrt() == 1 && check == 0) {
 				tmenge.add(s);
 				rtn++;
 			}
@@ -28,15 +44,29 @@ public class MASet {
 		return rtn;
 	}
 
+	
 	int dat2hset(BufferedReader br1) throws IOException {
+		Iterator<MaschineS> it = hmenge.iterator();
 		String pz = br1.readLine();
 		MaschineS s;
-		int rtn = 0;
-		
+		int rtn = 0, check;
 
 		while (pz != null) {
+			check = 0;	
 			s = new MaschineS(pz);
-			if (s.getCrt() == 1) {
+		
+			
+			// Für Spätere Aufgabe?
+			/*
+			for(int i=0;i<hmenge.size();i++){
+				if(s.compareTo(it.next())!=0){
+					check = -1;
+					break; 
+				}
+			}
+			*/
+			
+			if (s.getCrt() == 1 && check == 0) {
 				hmenge.add(s);
 				rtn++;
 			}
@@ -53,10 +83,11 @@ public class MASet {
 			String[] Str_Ar = new String[tmenge.size()];
 			Iterator<MaschineS> it = tmenge.iterator();
 					
-			Str_Ar[0] = tmenge.first().ausMaschCSV();
+			//Str_Ar[0] = tmenge.first().ausMaschCSV();
 			
 			while (it.hasNext()){
 				Str_Ar[i] = it.next().ausMaschCSV();
+				i++;
 			}
 			
 			return Str_Ar;
@@ -64,10 +95,12 @@ public class MASet {
 		
 		else if(a==2){ //hmenge to string[]
 			String[] Str_Ar = new String[hmenge.size()];
+			Iterator<MaschineS> it = hmenge.iterator();
 			
-			for(Iterator<MaschineS> it = hmenge.iterator();it.hasNext();i++){
+			while (it.hasNext()){
 				Str_Ar[i] = it.next().ausMaschCSV();
-			}	
+				i++;
+			}
 			
 			return Str_Ar;
 		}
