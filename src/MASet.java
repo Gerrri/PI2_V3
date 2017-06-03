@@ -5,8 +5,8 @@ import java.util.Iterator;
 import java.util.TreeSet;
 
 public class MASet {
-	TreeSet<MaschineS> tmenge;
-	HashSet<MaschineS> hmenge;
+	TreeSet<MaschineS> tmenge = new TreeSet<MaschineS>();;
+	HashSet<MaschineS> hmenge = new HashSet<MaschineS>();;
 	
 	MASet(){
 		
@@ -32,6 +32,8 @@ public class MASet {
 		String pz = br1.readLine();
 		MaschineS s;
 		int rtn = 0;
+		
+
 		while (pz != null) {
 			s = new MaschineS(pz);
 			if (s.getCrt() == 1) {
@@ -45,25 +47,31 @@ public class MASet {
 
 	String[] set2String(int a) {
 		int i=0;
-		String[] Str_Ar;
 		
 		
 		if (a==1){ //tmenge to string[]
-			Str_Ar = new String[tmenge.size()];
+			String[] Str_Ar = new String[tmenge.size()];
+			Iterator<MaschineS> it = tmenge.iterator();
+					
+			Str_Ar[0] = tmenge.first().ausMaschCSV();
 			
-			for(Iterator<MaschineS> it = tmenge.iterator();it.hasNext();i++){
+			while (it.hasNext()){
 				Str_Ar[i] = it.next().ausMaschCSV();
 			}
+			
+			return Str_Ar;
 		}
 		
 		else if(a==2){ //hmenge to string[]
-			Str_Ar = new String[hmenge.size()];
+			String[] Str_Ar = new String[hmenge.size()];
 			
 			for(Iterator<MaschineS> it = hmenge.iterator();it.hasNext();i++){
 				Str_Ar[i] = it.next().ausMaschCSV();
-			}
+			}	
+			
+			return Str_Ar;
 		}
 		
-		return Str_Ar;
+		return null; // fals ungültig!
 	}
 }

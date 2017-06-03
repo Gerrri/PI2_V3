@@ -15,14 +15,35 @@ public class MASetAnw {
 		a.dat2tset(br1);
 		
 		tmenge_str = new String[a.set2String(1).length];
-		a.set2String(1);
+		tmenge_str = a.set2String(1);
+		maschAus(tmenge_str);
 		
 		hmenge_str = new String[a.set2String(2).length];
-		a.set2String(2);
+		hmenge_str = a.set2String(2);
 		
 		
+		
+		 
 		
 	}
 	
+	static int maschAus(String MaschS[])throws IOException{
+		for (int i=0;i<MaschS.length;i++){
+			System.out.println(MaschS[i]+i);
+		}
+		
+		/*
+		if (das != null){
 	
+		}
+		
+		else{
+			for (int i=0;i<MaschS.length;i++){
+				System.out.println(MaschS[i]);
+			}
+		}
+		*/
+		
+		return 0;
+	}
 }

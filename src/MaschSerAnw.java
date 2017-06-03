@@ -9,7 +9,6 @@ public class MaschSerAnw {
 	}
 	
 	static int maschSerAus(BufferedReader br1,ObjectOutputStream ow1){
-			ow1.
 		
 		
 		
