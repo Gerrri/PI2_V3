@@ -23,16 +23,13 @@ public class MASet {
 			check = 0;
 			s = new MaschineS(pz);
 			
-			
-			//Für Spätere Aufgabe?
-			/*
 			for(int i=0;i<tmenge.size();i++){
 				if(s.compareTo(it.next())!=0){
 					check = -1;
 					break; 
 				}
 			}
-			*/
+			
 			
 			
 			if (s.getCrt() == 1 && check == 0) {
@@ -46,25 +43,25 @@ public class MASet {
 
 	
 	int dat2hset(BufferedReader br1) throws IOException {
-		Iterator<MaschineS> it = hmenge.iterator();
+		Iterator<MaschineS> it;
 		String pz = br1.readLine();
-		MaschineS s;
+		MaschineS s,v;
 		int rtn = 0, check;
 
 		while (pz != null) {
 			check = 0;	
+			it = hmenge.iterator();
 			s = new MaschineS(pz);
-		
-			
-			// Für Spätere Aufgabe?
-			/*
-			for(int i=0;i<hmenge.size();i++){
-				if(s.compareTo(it.next())!=0){
-					check = -1;
-					break; 
+
+				while (it.hasNext()&& s.getMabez()!=null && s.getStao()!=null && s.getManr()!=0 && s.getPreis()!=0){
+					v = it.next();
+					
+					if(s.compareTo(v)==1){
+						check = 1;
+						break; 
+					}
 				}
-			}
-			*/
+			
 			
 			if (s.getCrt() == 1 && check == 0) {
 				hmenge.add(s);

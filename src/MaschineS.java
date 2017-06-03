@@ -99,8 +99,10 @@ public class MaschineS implements Comparable<MaschineS> {
 		}
 
 		public int compareTo(MaschineS b) {
-			int m,p,mb,s;
-						
+			int m,p,mb,s,a;
+				
+			a=1;
+			
 			mb = mabez.compareTo(b.mabez);
 			s = stao.compareTo(b.stao);
 			m = manr - b.manr;
