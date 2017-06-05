@@ -97,11 +97,10 @@ public class MaschineS implements Comparable<MaschineS> {
 		double abschreibung(int laufz){
 			return (preis/laufz);
 		}
-
+		
+		@Override
 		public int compareTo(MaschineS b) {
-			int m,p,mb,s,a;
-				
-			a=1;
+			int m,p,mb,s;
 			
 			mb = mabez.compareTo(b.mabez);
 			s = stao.compareTo(b.stao);

@@ -5,8 +5,8 @@ import java.util.Iterator;
 import java.util.TreeSet;
 
 public class MASet {
-	TreeSet<MaschineS> tmenge = new TreeSet<MaschineS>();;
-	HashSet<MaschineS> hmenge = new HashSet<MaschineS>();;
+	TreeSet<MaschineS> tmenge = new TreeSet<MaschineS>();
+	HashSet<MaschineS> hmenge = new HashSet<MaschineS>();
 	
 	MASet(){
 		
@@ -14,22 +14,24 @@ public class MASet {
 	
 
 	int dat2tset(BufferedReader br1) throws IOException {
-		Iterator<MaschineS> it = tmenge.iterator();
+		Iterator<MaschineS> it;
 		String pz = br1.readLine();
-		MaschineS s;
+		MaschineS s,v;
 		int rtn = 0,check;
-		
-		while (pz != null){
-			check = 0;
+
+		while (pz != null) {
+			check = 0;	
+			it = tmenge.iterator();
 			s = new MaschineS(pz);
-			
-			for(int i=0;i<tmenge.size();i++){
-				if(s.compareTo(it.next())!=0){
-					check = -1;
-					break; 
+
+				while (it.hasNext() && s.getMabez()!=null && s.getStao()!=null && s.getManr()!=0 && s.getPreis()!=0){
+					v = it.next();
+					
+					if(s.compareTo(v)==1){
+						check = 1;
+						break; 
+					}
 				}
-			}
-			
 			
 			
 			if (s.getCrt() == 1 && check == 0) {
@@ -38,7 +40,34 @@ public class MASet {
 			}
 			pz = br1.readLine();
 		}
+		
+
+		
+		/*
+		while (pz != null){
+			check = 0;
+			it = tmenge.iterator();
+			s = new MaschineS(pz);
+			
+			
+			while (it.hasNext() && s.getMabez()!=null && s.getStao()!=null && s.getManr()!=0 && s.getPreis()!=0){
+				v = it.next();
+				
+				if(s.compareTo(v)==1){
+					check = 1;
+					break; 
+				}
+			}
+			
+			if (s.getCrt() == 1 && check == 0) {
+				tmenge.add(s);
+				rtn++;
+			}
+			pz = br1.readLine();
+		}
+		*/
 		return rtn;
+		
 	}
 
 	
@@ -53,7 +82,7 @@ public class MASet {
 			it = hmenge.iterator();
 			s = new MaschineS(pz);
 
-				while (it.hasNext()&& s.getMabez()!=null && s.getStao()!=null && s.getManr()!=0 && s.getPreis()!=0){
+				while (it.hasNext() && s.getMabez()!=null && s.getStao()!=null && s.getManr()!=0 && s.getPreis()!=0){
 					v = it.next();
 					
 					if(s.compareTo(v)==1){
@@ -70,8 +99,9 @@ public class MASet {
 			pz = br1.readLine();
 		}
 		return rtn;
+		
 	}
-
+	
 	String[] set2String(int a) {
 		int i=0;
 		

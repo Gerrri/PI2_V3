@@ -5,18 +5,18 @@ public class MASetAnw {
 	public static void main(String[] args)throws IOException{
 		MASet a = new MASet();
 		MASet b = new MASet();
-		FileReader pe1 = new FileReader("MASCH.TXT");
+		FileReader pe1 = new FileReader("MASCH2.TXT");
 		BufferedReader br1 = new BufferedReader(pe1);
 		
-		FileReader pe2 = new FileReader("MASCH.TXT");
-		BufferedReader br2 = new BufferedReader(pe1);
+		FileReader pe2 = new FileReader("MASCH2.TXT");
+		BufferedReader br2 = new BufferedReader(pe2);
 		
 		String[] tmenge_str;
 		String[] hmenge_str;
 		
-		
-		a.dat2hset(br1); // Wenn man hier vertauscht (reihenfolge) geht nichtmal mehr hmenge
 		b.dat2tset(br2);
+		a.dat2hset(br1);
+		
 		
 		// TMENGE !!############
 		tmenge_str = new String[b.set2String(1).length];
@@ -24,7 +24,7 @@ public class MASetAnw {
 		
 		System.out.println("##### STRAT Tmenge #####");
 		maschAus(tmenge_str);
-		System.out.println("##### ENDE  Hmenge #####");
+		System.out.println("##### ENDE  Tmenge #####");
 		
 		
 		

@@ -1,0 +1,16 @@
+1;456.34;Machiene0;Ort0
+2;45.2;Machiene7;Ort5D1
+3;943.0;Machiene25;Ort7
+4;33.98;Machiene2;Ort4D3
+5;33.98;Machiene233;Ort8D2
+3;943.0;Machiene25;Ort7
+7;23.0;Machiene64;Ort6
+8;943.0;Machiene22;Ort2
+2;45.2;Machiene7;Ort5D1
+9;23.0;Machiene61;Ort6
+5;33.98;Machiene233;Ort8D2
+4;33.98;Machiene2;Ort4D3
+-10;33.98;Machiene25;Ort23Fehler
+11;33.98;machiene53;Ort89Fehler
+12;943.0;Machiene85;ort23Fehler
+13;-23.0;machiene69;Ort45Fehler
