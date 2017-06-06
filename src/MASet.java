@@ -17,15 +17,29 @@ public class MASet {
 		Iterator<MaschineS> it = tmenge.iterator();
 		String pz = br1.readLine();
 		MaschineS s,v = null;
-		int rtn = 0,check,i=0;	
+		int rtn = 0,check=0,i=0;	
+		
+		
+
 		
 		while (pz != null){	
 			s = new MaschineS(pz);
-			
-			if(s.getCrt()==1 && tmenge.add(s)){
+			it = tmenge.iterator();
+			check = 0;
+			//System.out.println("["+i+"]"+tmenge.contains(s));
+
+			while (it.hasNext()){
+				v=it.next();
+				
+				if(s.compareTo(v)==0){
+					check = 1;
+				}
+			}
+				
+			if(s.getCrt()==1 && check==0 && tmenge.add(s)){
 				rtn++;
 			}
-			
+				
 			pz = br1.readLine();
 		}
 		

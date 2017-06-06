@@ -103,19 +103,19 @@ public class MaschineS implements Comparable<MaschineS> {
 		@Override
 		public int compareTo(MaschineS b) {
 			boolean m,p,mb,s;
-			
-			mb = (mabez.compareTo(b.mabez)==0);
-			s = (stao.compareTo(b.stao)==0);
-			m = manr == b.manr;
-			p = preis == b.preis;
-			
-			if(mb && s && m && p){
-				return 0;
+			if(b!=null && this.mabez!=null && this.stao!=null){
+				mb = (this.mabez.compareTo(b.mabez)==0);
+				s = (this.stao.compareTo(b.stao)==0);
+				m = (this.manr == b.manr);
+				p = (this.preis == b.preis);
+				
+				if(mb==true && s==true && m==true && p==true){
+					return 0;
+				}
 			}
 			
-			else{
-				return 1;
-			}
+			return 1;
+			
 			// 0 -> Datensatz bereits vorhanden
 			// 1 -> Datensatz nicht vorhanden
 		}
