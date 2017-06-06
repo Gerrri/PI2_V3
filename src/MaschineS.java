@@ -1,3 +1,5 @@
+import javax.print.DocFlavor.STRING;
+
 public class MaschineS implements Comparable<MaschineS> {
 		private int manr; // Maschinennummer
 		private double preis; // Maschinen anschaffungspreis
@@ -100,24 +102,48 @@ public class MaschineS implements Comparable<MaschineS> {
 		
 		@Override
 		public int compareTo(MaschineS b) {
-			int m,p,mb,s;
+			boolean m,p,mb,s;
 			
-			mb = mabez.compareTo(b.mabez);
-			s = stao.compareTo(b.stao);
-			m = manr - b.manr;
-			p = (int) (preis - b.preis);
+			mb = (mabez.compareTo(b.mabez)==0);
+			s = (stao.compareTo(b.stao)==0);
+			m = manr == b.manr;
+			p = preis == b.preis;
 			
-			if(mb==0 && s==0 && m==0 && p==0){
-				return 1;
+			if(mb && s && m && p){
+				return 0;
 			}
 			
 			else{
-				return 0;
+				return 1;
 			}
-			// 0 -> Ungleicher Datensatz
-			// 1 -> Gleicher Datensatz
-
-			
+			// 0 -> Datensatz bereits vorhanden
+			// 1 -> Datensatz nicht vorhanden
 		}
+		
+		@Override
+		public boolean equals(Object in)
+			{
+				MaschineS temp = (MaschineS) in;
+				if ((this.manr == temp.manr) && (this.mabez.compareTo(temp.mabez) == 0) && (this.preis == temp.preis)
+						&& (this.stao.compareTo(temp.stao) == 0) && in != null)
+					{
+						return true;
+					} else
+					return false;
+
+			}
+
+		@Override
+		public int hashCode()
+			{
+				String a,b;
+				a = "" + manr;
+				b = "" + preis;
+				
+				int hash = (this.mabez.hashCode()) + (this.stao.hashCode()) + (a.hashCode()) + (b.hashCode());
+				return hash;
+			}
+		
+		
 }
 

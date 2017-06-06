@@ -14,11 +14,32 @@ public class MASet {
 	
 
 	int dat2tset(BufferedReader br1) throws IOException {
-		Iterator<MaschineS> it;
+		Iterator<MaschineS> it = tmenge.iterator();
 		String pz = br1.readLine();
-		MaschineS s,v;
-		int rtn = 0,check;
-
+		MaschineS s,v = null;
+		int rtn = 0,check,i=0;	
+		
+		while (pz != null){	
+			s = new MaschineS(pz);
+			
+			if(s.getCrt()==1 && tmenge.add(s)){
+				rtn++;
+			}
+			
+			pz = br1.readLine();
+		}
+		
+	return rtn;
+		
+	}
+			
+		
+		
+		
+		
+		
+		
+		/*
 		while (pz != null) {
 			check = 0;	
 			it = tmenge.iterator();
@@ -40,6 +61,7 @@ public class MASet {
 			}
 			pz = br1.readLine();
 		}
+		*/
 		
 
 		
@@ -66,9 +88,7 @@ public class MASet {
 			pz = br1.readLine();
 		}
 		*/
-		return rtn;
-		
-	}
+	
 
 	
 	int dat2hset(BufferedReader br1) throws IOException {
@@ -76,7 +96,47 @@ public class MASet {
 		String pz = br1.readLine();
 		MaschineS s,v;
 		int rtn = 0, check;
+		
+		while (pz != null){
+			
+			s = new MaschineS(pz);
+			if(s.getCrt()==1 && hmenge.add(s)){
+				rtn++;
+			}
+			
+			pz = br1.readLine();
+		}
+		
+		/*VERSUCH 2
+		int anzahl = 0;
+		String input;
 
+		while ((input = br1.readLine()) != null)
+			{
+				if ((new MaschineS(input).getCrt()) == 1)
+					{
+						if (hmenge.add(new MaschineS(input)))
+							{
+								System.out.println("Done!\n");
+								anzahl++;
+							} else
+							{
+								System.out.println("Not added! - double entry\n");
+							}
+					} else
+					{
+						System.out.println("Not added! - false type\n");
+					}
+			}
+
+		br1.close();
+		return anzahl;
+		*/
+		
+		
+		
+		
+		/*VERSUCH 1
 		while (pz != null) {
 			check = 0;	
 			it = hmenge.iterator();
@@ -98,6 +158,7 @@ public class MASet {
 			}
 			pz = br1.readLine();
 		}
+*/
 		return rtn;
 		
 	}

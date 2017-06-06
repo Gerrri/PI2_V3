@@ -1,9 +1,9 @@
 1;456.34;Machiene0;Ort0
 2;45.2;Machiene7;Ort5D1
-3;943.0;Machiene25;Ort7
+3;943.0;Machiene25;Ort7D4
 4;33.98;Machiene2;Ort4D3
 5;33.98;Machiene233;Ort8D2
-3;943.0;Machiene25;Ort7
+3;943.0;Machiene25;Ort7D4
 7;23.0;Machiene64;Ort6
 8;943.0;Machiene22;Ort2
 2;45.2;Machiene7;Ort5D1
