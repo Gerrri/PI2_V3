@@ -27,7 +27,7 @@ public class Mat implements skalierbar{
 		a= new double[n][m];					//double Matrix erstellen
 		
 		
-		for(int i=0;i<n;i++){					// befüllen der Matrix
+		for(int i=0;i<n;i++){					// befÃ¼llen der Matrix
 			if((MatList.get(i).split(";").length) == m){
 				for(int j=0;j<m;j++){
 					a[i][j] = Double.parseDouble((MatList.get(i).split(";"))[j]);
@@ -43,28 +43,29 @@ public class Mat implements skalierbar{
 	@Override
 	public double[][] skalMult(double x) {
 		int n,m;
-		
-		n=a.length;
-			for(int i=0;i<n;i++){
+		//double[][]temp=new double[this.length][];
+		n=a.length;//a?
+			for(int i=0;i<n/*this.a.length*/;i++){
 				m=a[i].length;
-					for(int j=0;j<m;j++){
+					for(int j=0;j<m/*this.a[i].length*/;j++){
+						//temp[i]=new double[this.a[i].length];
 						a[i][j] *= x;
 					}
 			}
-		return null;
+		return null;	//keine rÃ¼ckgabe?
 	}
 	
 	boolean matAus(FileWriter fx){		
-		boolean stat=true; // Wofür diesen boolean?
+		boolean stat=true; // WofÃ¼r diesen boolean?
 		int n,m;
 		String temp1 ="";
 		//List<String> AusMatList = new LinkedList<String>();
 		PrintWriter pr1= new PrintWriter(fx);
 		
 		n=a.length;
-			for(int i=0;i<n;i++){			//Aufzählung zeilen
+			for(int i=0;i<n;i++){			//AufzÃ¤hlung zeilen
 				m=a[i].length;
-				for(int j=0;j<m;j++){		//Aufzählung Spalten
+				for(int j=0;j<m;j++){		//AufzÃ¤hlung Spalten
 					temp1 = temp1 + a[i][j];
 					if(j<(m-1)){
 						temp1=temp1+";";	// Semikolen wenn nicht letztes element in Zeile
@@ -88,7 +89,7 @@ public class Mat implements skalierbar{
 		
 		b = c.a;
 		
-		if(b.length == a[0].length){			// prüfung ob 
+		if(b.length == a[0].length){			// prÃ¼fung ob 
 			
 			n=a.length;
 			m=b[0].length;
